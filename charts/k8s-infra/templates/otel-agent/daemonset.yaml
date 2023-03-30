@@ -24,6 +24,8 @@ spec:
       labels:
         {{- include "otelAgent.selectorLabels" . | nindent 8 }}
     spec:
+      securityContext:
+        runAsUser: 0
       {{- include "otelAgent.imagePullSecrets" . | indent 6 }}
       serviceAccountName: {{ include "otelAgent.serviceAccountName" . }}
       priorityClassName: {{ .Values.otelAgent.priorityClassName | quote }}

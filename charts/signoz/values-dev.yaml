@@ -1,0 +1,6 @@
+# global:
+#   storageClass: cstor-csi-disk
+
+clickhouse:
+  persistence:
+    size: 3Gi
